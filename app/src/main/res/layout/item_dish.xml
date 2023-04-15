@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="dishItem"
+            type="com.example.testtaskzm.domain.entity.DishItem" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="162dp"
+        android:layout_height="284dp"
+        android:background="@drawable/rectangle_corner_item"
+        android:elevation="1dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/im_dish"
+            loadImage="@{dishItem.image}"
+            android:layout_width="150dp"
+            android:layout_height="114dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/corner_image_style"
+            app:srcCompat="@drawable/item_image"
+            tools:src="@drawable/item_image" />
+
+        <TextView
+            android:id="@+id/tv_discount"
+            style="@style/text_discount_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/rectangle_discount"
+            android:text='@{dishItem.discount + "%"}'
+            tools:text="-15%" />
+
+        <TextView
+            android:id="@+id/tv_old_prise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/im_dish"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:text='@{dishItem.oldPrise + " ₽"}'
+            android:textAppearance="@style/text_old_prise_style"
+            tools:text="612 ₽" />
+
+        <TextView
+            android:id="@+id/tv_new_prise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_old_prise"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:text='@{dishItem.newPrise + " ₽"}'
+            android:textAppearance="@style/text_new_prise_style"
+            tools:text="612 ₽" />
+
+        <TextView
+            android:id="@+id/tv_portion_in_grams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/im_dish"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="10dp"
+            android:text='@{dishItem.portionInGrams + " гр."}'
+            android:textColor="@color/grey_3"
+            android:textSize="14sp"
+            tools:text="500 г" />
+
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="142dp"
+            android:layout_height="58dp"
+            android:layout_below="@+id/tv_new_prise"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:hyphenationFrequency="full"
+            android:text="@{dishItem.description}"
+            tools:text="Рахат-Лукум Гранато-вый с дробленной фисташкой"
+            android:textAppearance="@style/text_description_style" />
+
+        <RelativeLayout
+            android:id="@+id/bt_add_to_cart"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:layout_below="@+id/tv_description"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/rectangle_add_to_cart">
+
+            <ImageView
+                android:id="@+id/ic_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="21dp"
+                android:src="@drawable/ic_shopping_cart" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_toEndOf="@+id/ic_cart"
+                android:text="@string/in_cart"
+                android:textAppearance="@style/text_bt_buy" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

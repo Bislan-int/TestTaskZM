@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <dimen name="elevation_4dp">4dp</dimen>
+    <dimen name="margin_4dp">4dp</dimen>
+
+    <dimen name="space_top_main_items">24dp</dimen>
+    <dimen name="space_top_last_main_item">48dp</dimen>
+
+    <dimen name="space_between_items_category">12dp</dimen>
+    <dimen name="space_first_and_end_items_category">16dp</dimen>
+
+    <dimen name="space_between_items_dish">8dp</dimen>
+    <dimen name="space_first_and_end_items_dish">16dp</dimen>
+
+</resources>

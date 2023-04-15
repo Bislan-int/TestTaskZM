@@ -1,0 +1,60 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.TestTaskZM" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="corner_image_style" parent="">
+        <item name="cornerSize">15dp</item>
+    </style>
+
+    <style name="rectangle">
+        <item name="cornerRadius">15dp</item>
+    </style>
+
+    <style name="text_discount_style">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="text_description_style">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="text_bt_buy">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="text_old_prise_style">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="text_new_prise_style">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FF4C30</item>
+    </style>
+
+    <style name="text_head_category_name_style">
+        <item name="android:textSize">32sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

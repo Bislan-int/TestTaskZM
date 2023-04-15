@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="dishHorizontal"
+            type="com.example.testtaskzm.domain.entity.DishHorizontalItem" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{dishHorizontal.title}"
+            tools:text="Горячие блюда"
+            android:textAppearance="@style/text_head_category_name_style" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_dish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_dish" />
+
+    </LinearLayout>
+</layout>

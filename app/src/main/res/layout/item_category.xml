@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="categoryItem"
+            type="com.example.testtaskzm.domain.entity.CategoryItem" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_category_item">
+
+        <TextView
+            android:id="@+id/text_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{categoryItem.category}"
+            tools:text="Закуски"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:padding="11dp" />
+
+    </FrameLayout>
+</layout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TestTaskZM</string>
+    <string name="inst_profile_zm">\@Zm</string>
+    <string name="in_cart">В корзину</string>
+    <string name="about_company">О компании</string>
+    <string name="coffee_house">Кофейня</string>
+    <string name="name_coffee_house"><![CDATA[ЗМ culture&coffee]]></string>
+    <string name="delivery">Доставка</string>
+    <string name="promotion">Акции</string>
+    <string name="vacancies">Вакансии</string>
+    <string name="terms_of_use">Пользовательское соглашение</string>
+    <string name="connect_with_us">Связаться с нами</string>
+    <string name="number">8 800 222 26 86</string>
+    <string name="vk_profile">Zm</string>
+</resources>

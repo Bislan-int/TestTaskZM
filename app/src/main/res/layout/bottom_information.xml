@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="107dp"
+        android:background="@color/white"
+        android:elevation="4dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/bottom_information_icon" />
+
+        <TextView
+            android:id="@+id/tv_name_ZM"
+            android:layout_width="130dp"
+            android:layout_height="60dp"
+            android:layout_alignTop="@+id/image"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/image"
+            android:text="@string/name_coffee_house"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_coffee_house"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name_ZM"
+            android:layout_alignStart="@+id/tv_name_ZM"
+            android:layout_marginTop="8dp"
+            android:text="@string/coffee_house"
+            android:textColor="@color/grey_1"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_about_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image"
+            android:layout_alignStart="@+id/image"
+            android:layout_marginTop="39dp"
+            android:text="@string/about_company"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_delivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_about_company"
+            android:layout_alignStart="@+id/tv_about_company"
+            android:layout_marginTop="16dp"
+            android:text="@string/delivery"
+            android:textColor="@color/grey_2"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_promotion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_delivery"
+            android:layout_alignStart="@+id/tv_about_company"
+            android:layout_marginTop="16dp"
+            android:text="@string/promotion"
+            android:textColor="@color/grey_2"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_vacancies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_promotion"
+            android:layout_alignStart="@+id/tv_about_company"
+            android:layout_marginTop="16dp"
+            android:text="@string/vacancies"
+            android:textColor="@color/grey_2"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_terms_of_use"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_vacancies"
+            android:layout_alignStart="@+id/tv_about_company"
+            android:layout_marginTop="16dp"
+            android:text="@string/terms_of_use"
+            android:textColor="@color/grey_2"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_connect_with_us"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_terms_of_use"
+            android:layout_alignStart="@+id/tv_about_company"
+            android:layout_marginTop="39dp"
+            android:text="@string/connect_with_us"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/ic_whatsapp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_connect_with_us"
+            android:layout_alignStart="@+id/tv_connect_with_us"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/ic_whatsapp" />
+
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ic_whatsapp"
+            android:layout_alignBottom="@+id/ic_whatsapp"
+            android:layout_toEndOf="@+id/ic_whatsapp"
+            android:layout_marginStart="10dp"
+            android:text="@string/number"
+            android:textSize="14sp"
+            android:textColor="@color/grey_2"
+            android:gravity="center" />
+
+        <ImageView
+            android:id="@+id/ic_instagram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ic_whatsapp"
+            android:layout_alignStart="@+id/tv_connect_with_us"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/ic_instagram" />
+
+        <TextView
+            android:id="@+id/tv_inst_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ic_instagram"
+            android:layout_alignBottom="@+id/ic_instagram"
+            android:layout_toEndOf="@+id/ic_instagram"
+            android:layout_marginStart="10dp"
+            android:text="@string/inst_profile_zm"
+            android:textSize="14sp"
+            android:textColor="@color/grey_2"
+            android:gravity="center" />
+
+        <ImageView
+            android:id="@+id/ic_vk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ic_instagram"
+            android:layout_alignStart="@+id/tv_connect_with_us"
+            android:layout_marginTop="18dp"
+            android:src="@drawable/ic_vk" />
+
+        <TextView
+            android:id="@+id/tv_vk_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ic_vk"
+            android:layout_alignBottom="@+id/ic_vk"
+            android:layout_toEndOf="@+id/ic_vk"
+            android:layout_marginStart="10dp"
+            android:text="@string/vk_profile"
+            android:textSize="14sp"
+            android:textColor="@color/grey_2"
+            android:gravity="center" />
+
+    </RelativeLayout>
+</layout>
