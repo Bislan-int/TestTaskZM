@@ -44,10 +44,13 @@
             android:text='@{dishItem.discount + "%"}'
             tools:text="-15%" />
 
-        <TextView
+        <com.example.testtaskzm.presentation.customview.StrikethroughTextView
             android:id="@+id/tv_old_prise"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:stroke_width="3"
+            app:strokeColor="@color/black"
+            android:freezesText="true"
             android:layout_below="@+id/im_dish"
             android:layout_alignParentStart="true"
             android:layout_marginStart="10dp"
