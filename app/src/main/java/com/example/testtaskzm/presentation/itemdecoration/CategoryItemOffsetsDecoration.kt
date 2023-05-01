@@ -20,20 +20,28 @@ class CategoryItemOffsetsDecoration(
     ) {
         super.getItemOffsets(outRect, view, parent, state)
 
-        outRect.left = context.resources.getDimension(
-            R.dimen.space_between_items_category
-        ).toInt()
+        val lastItem = parent.adapter?.let { it.itemCount - 1 }
 
-        if (parent.getChildAdapterPosition(view) == FIRST_ITEM) {
-            outRect.left = context.resources.getDimension(
-                R.dimen.space_first_and_end_items_category
-            ).toInt()
-        }
-
-        if (parent.getChildAdapterPosition(view) == parent.size + 1) {
-            outRect.right = context.resources.getDimension(
-                R.dimen.space_first_and_end_items_category
-            ).toInt()
+        when (parent.getChildAdapterPosition(view)) {
+            RecyclerView.NO_POSITION,
+            FIRST_ITEM -> {
+                outRect.left = context.resources.getDimension(
+                    R.dimen.space_first_and_end_items_category
+                ).toInt()
+                outRect.right = context.resources.getDimension(
+                    R.dimen.space_between_items_category
+                ).toInt()
+            }
+            lastItem -> {
+                outRect.right = context.resources.getDimension(
+                    R.dimen.space_first_and_end_items_category
+                ).toInt()
+            }
+            else -> {
+                outRect.right = context.resources.getDimension(
+                    R.dimen.space_between_items_category
+                ).toInt()
+            }
         }
     }
 

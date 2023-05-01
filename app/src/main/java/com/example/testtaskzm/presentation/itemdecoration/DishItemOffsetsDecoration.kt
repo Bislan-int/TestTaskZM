@@ -18,28 +18,31 @@ class DishItemOffsetsDecoration(
     ) {
         super.getItemOffsets(outRect, view, parent, state)
 
+        val lastItem = parent.adapter?.let { it.itemCount - 1 }
+
         outRect.top = context.resources.getDimension(
             R.dimen.space_top_main_items
         ).toInt()
 
-        parent.adapter?.let { adapter ->
-            when (parent.getChildAdapterPosition(view)) {
-                RecyclerView.NO_POSITION,
-                FIRST_ITEM -> {
-                    outRect.left = context.resources.getDimension(
-                        R.dimen.space_first_and_end_items_dish
-                    ).toInt()
-                }
-                adapter.itemCount - 1 -> {
-                    outRect.right = context.resources.getDimension(
-                        R.dimen.space_first_and_end_items_dish
-                    ).toInt()
-                }
-                else -> {
-                    outRect.right = context.resources.getDimension(
-                        R.dimen.space_between_items_dish
-                    ).toInt()
-                }
+        when (parent.getChildAdapterPosition(view)) {
+            RecyclerView.NO_POSITION,
+            FIRST_ITEM -> {
+                outRect.left = context.resources.getDimension(
+                    R.dimen.space_first_and_end_items_dish
+                ).toInt()
+                outRect.right = context.resources.getDimension(
+                    R.dimen.space_between_items_dish
+                ).toInt()
+            }
+            lastItem -> {
+                outRect.right = context.resources.getDimension(
+                    R.dimen.space_first_and_end_items_dish
+                ).toInt()
+            }
+            else -> {
+                outRect.right = context.resources.getDimension(
+                    R.dimen.space_between_items_dish
+                ).toInt()
             }
         }
     }
