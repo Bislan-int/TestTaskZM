@@ -5,12 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.testtaskzm.domain.entity.CategoryItem
-import com.example.testtaskzm.domain.entity.DishHorizontalItem
 import com.example.testtaskzm.databinding.BannerBinding
 import com.example.testtaskzm.databinding.BottomInformationBinding
 import com.example.testtaskzm.databinding.ItemCategoryHorizontalBinding
 import com.example.testtaskzm.databinding.ItemHorizontalBinding
+import com.example.testtaskzm.domain.entity.CategoryItem
+import com.example.testtaskzm.domain.entity.DishHorizontalItem
 import com.example.testtaskzm.presentation.diffutil.DiffCallback
 import com.example.testtaskzm.presentation.itemdecoration.CategoryItemOffsetsDecoration
 import com.example.testtaskzm.presentation.itemdecoration.DishItemOffsetsDecoration
@@ -55,35 +55,18 @@ class MainAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+
         if (position == CATEGORY) {
             val categoryAdapter = CategoryAdapter()
             categoryAdapter.submitList(listCategory)
-
-            val rv = (holder as CategoryViewHolder).categoryRV
-            rv.addItemDecoration(CategoryItemOffsetsDecoration(holder.categoryRV.context))
-            rv.layoutManager = LinearLayoutManager(
-                holder.categoryRV.context,
-                LinearLayoutManager.HORIZONTAL,
-                false
-            )
-            rv.adapter = categoryAdapter
+            (holder as CategoryViewHolder).categoryRV.adapter = categoryAdapter
 
         } else if (position != BANNER && position != CATEGORY && position != currentList.size + 2) {
             val dishHolder = (holder as DishesViewHolder)
-
             dishHolder.bind(currentList[position - 2])
-
             val dishHorizontalAdapter = DishAdapter()
             dishHorizontalAdapter.submitList(currentList[position - 2].dishes)
-
-            val rv = dishHolder.dish
-            rv.layoutManager = LinearLayoutManager(
-                holder.dish.context,
-                LinearLayoutManager.HORIZONTAL,
-                false
-            )
-            rv.addItemDecoration(DishItemOffsetsDecoration(holder.dish.context))
-            rv.adapter = dishHorizontalAdapter
+            holder.dish.adapter = dishHorizontalAdapter
         }
     }
 
@@ -103,18 +86,37 @@ class MainAdapter(
     class CategoryViewHolder(
         binding: ItemCategoryHorizontalBinding
     ) : RecyclerView.ViewHolder(binding.root) {
+
         val categoryRV = binding.rvCategory
+
+        init {
+            categoryRV.layoutManager = LinearLayoutManager(
+                categoryRV.context,
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
+            categoryRV.addItemDecoration(CategoryItemOffsetsDecoration(categoryRV.context))
+        }
     }
 
     class DishesViewHolder(
         private val binding: ItemHorizontalBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
+        val dish = binding.rvDish
+
+        init {
+            dish.layoutManager = LinearLayoutManager(
+                dish.context,
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
+            dish.addItemDecoration(DishItemOffsetsDecoration(dish.context))
+        }
+
         fun bind(item: DishHorizontalItem) {
             binding.dishHorizontal = item
         }
-
-        val dish = binding.rvDish
     }
 
     class InformationViewHolder(
